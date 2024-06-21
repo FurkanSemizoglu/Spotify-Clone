@@ -3,7 +3,5 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  sdfdsfds
-
-  <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <div class="w-[calc(100%-240px)] h-[60px] fixed right-0 bg-[#101010]"></div>
 </template>
