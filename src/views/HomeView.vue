@@ -97,7 +97,9 @@ import HomeCard from '@/components/HomeCard.vue'
 
     <!-- bottom part -->
 
-    <div class="text-2xl font-semibold mt-10 mb-3 text-white hover:underline cursor-pointer">
+    <div
+      class="inline-block text-2xl font-semibold mt-10 mb-3 text-white hover:underline cursor-pointer"
+    >
       Recommended Stations
     </div>
     <div class="grid grid-cols-5 gap-2">
@@ -130,7 +132,9 @@ import HomeCard from '@/components/HomeCard.vue'
       />
     </div>
 
-    <div class="text-2xl font-semibold mt-16 mb-3 text-white hover:underline cursor-pointer">
+    <div
+      class="inline-block text-2xl font-semibold mt-16 mb-3 text-white hover:underline cursor-pointer"
+    >
       Recommended For Today
     </div>
     <div class="grid grid-cols-5 gap-2">
