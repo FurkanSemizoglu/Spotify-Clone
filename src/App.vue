@@ -10,7 +10,7 @@ import SideBarItem from './components/SideBarItem.vue'
 <template>
   <!--    TopNav bar -->
   <div
-    class="w-[calc(100%-240px)] h-[60px] fixed right-0 bg-[#101010] bg-opacity-90 flex items-center justify-between"
+    class="w-[calc(100%-240px)] h-[60px] fixed right-0 bg-[#101010] z-50 bg-opacity-90 flex items-center justify-between"
   >
     <div class="flex gap-3 ml-3">
       <button type="button" class="bg-black rounded-full">
@@ -77,5 +77,13 @@ import SideBarItem from './components/SideBarItem.vue'
         </li>
       </ul>
     </div>
+  </div>
+
+  <div
+    class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1C1C1C] to-black"
+  >
+    <div class="mt-[70px]"></div>
+    <RouterView />
+    <div class="mb-[100px]"></div>
   </div>
 </template>
