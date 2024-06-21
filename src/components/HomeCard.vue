@@ -9,7 +9,7 @@ const props = defineProps<HomeCardProps>()
 </script>
 
 <template>
-  <div class="p-2 bg-[#111111] rounded-md">
+  <div class="p-2 bg-[#111111] rounded-md transition duration-600 ease-in-out hover:-translate-y-1">
     <img class="rounded-md" :src="props.imageUrl" alt="homeImage" />
 
     <div class="text-white font-semibold text-[17px] pt-2">{{ props.title }}</div>
