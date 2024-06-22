@@ -11,8 +11,6 @@ const props = defineProps<ColorfulCategoryProps>()
 const randomColor = ref<any>('')
 
 randomColor.value = uniqolor.random()
-
-console.log(randomColor.value)
 </script>
 
 <template>

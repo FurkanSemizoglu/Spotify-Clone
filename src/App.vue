@@ -7,13 +7,27 @@ import ChevronUp from 'vue-material-design-icons/ChevronUp.vue'
 
 import SideBarItem from './components/SideBarItem.vue'
 
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
+
+console.log('query ', route.path)
 const openMenu = ref<boolean>(false)
 
 const toogleMenu = () => {
   openMenu.value = !openMenu.value
 }
+
+const openSearchArea = ref<boolean>(false)
+
+watch(route, () => {
+  if (route.path === '/search') {
+    openSearchArea.value = true
+  } else {
+    openSearchArea.value = false
+  }
+})
 </script>
 
 <template>
@@ -28,6 +42,14 @@ const toogleMenu = () => {
       <button class="bg-black rounded-full">
         <ChevronRight fillColor="#FFFFFF" :size="30" />
       </button>
+
+      <div v-if="openSearchArea" class="flex items-center ml-10 w-[300px]">
+        <input
+          class="rounded-3xl border-none w-full bg-[#3E3D3D] p-1 px-3 text-white placeholder:text-gray-400 placeholder:text-[14px]"
+          type="text"
+          placeholder="What do you want to play?"
+        />
+      </div>
     </div>
 
     <div
