@@ -9,7 +9,7 @@ console.log(singers)
   <div class="p-8">
     <!-- top part -->
     <!-- <example /> -->;
-    <div class="grid grid-cols-5 gap-4">
+    <div class="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 gap-4">
       <div v-for="(singer, index) in singers" :key="index">
         <SingerCard :name="singer.name" :imageSrc="singer.imageSrc" />
       </div>
@@ -23,7 +23,7 @@ console.log(singers)
     >
       Recommended Stations
     </div>
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid w-full lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-2">
       <HomeCard
         image-url="https://picsum.photos/id/163/300/300"
         title="Trend 2024"
@@ -40,13 +40,11 @@ console.log(singers)
         subtitle="subtitle"
       />
       <HomeCard
-        class="lg:block hidden"
         image-url="https://picsum.photos/id/61/300/300"
         title="I am title"
         subtitle="subtitle"
       />
       <HomeCard
-        class="xl:block hidden"
         image-url="https://picsum.photos/id/55/300/300"
         title="I am title"
         subtitle="subtitle"
@@ -58,7 +56,7 @@ console.log(singers)
     >
       Recommended For Today
     </div>
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid w-full lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-2">
       <HomeCard
         image-url="https://picsum.photos/id/10/300/300"
         title="I am title"
@@ -75,13 +73,11 @@ console.log(singers)
         subtitle="subtitle"
       />
       <HomeCard
-        class="lg:block hidden"
         image-url="https://picsum.photos/id/65/300/300"
         title="I am title"
         subtitle="subtitle"
       />
       <HomeCard
-        class="xl:block hidden"
         image-url="https://picsum.photos/id/83/300/300"
         title="I am title"
         subtitle="subtitle"

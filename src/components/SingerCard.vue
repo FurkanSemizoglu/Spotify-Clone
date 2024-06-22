@@ -9,7 +9,7 @@ const props = defineProps<SingerCardProps>()
 
 <template>
   <div
-    class="bg-[#282828] rounded-lg p-4 flex items-center justify-between gap-3 relative bg-opacity-80 hover:bg-opacity-100 cursor-pointer"
+    class="bg-[#282828] rounded-lg p-4 flex items-center justify-between gap-3 relative bg-opacity-80 hover:bg-opacity-100 cursor-pointer max-h-[60px]"
   >
     <img
       :width="60"
@@ -17,6 +17,6 @@ const props = defineProps<SingerCardProps>()
       :src="props.imageSrc"
       alt=""
     />
-    <div class="text-white ml-20">{{ props.name }}</div>
+    <div class="text-white ml-20 block">{{ props.name }}</div>
   </div>
 </template>

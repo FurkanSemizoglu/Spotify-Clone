@@ -11,7 +11,7 @@ import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-
+const routePath = ref<string>(route.path)
 console.log('query ', route.path)
 const openMenu = ref<boolean>(false)
 
@@ -22,11 +22,18 @@ const toogleMenu = () => {
 const openSearchArea = ref<boolean>(false)
 
 watch(route, () => {
+  routePath.value = route.path
+})
+
+watch(routePath, (newVal, oldVal) => {
   if (route.path === '/search') {
     openSearchArea.value = true
   } else {
     openSearchArea.value = false
   }
+
+  console.log('oldVal', oldVal)
+  console.log('newVal', newVal)
 })
 </script>
 
@@ -37,13 +44,13 @@ watch(route, () => {
   >
     <div class="flex gap-3 ml-3">
       <button type="button" class="bg-black rounded-full">
-        <ChevronLeft fillColor="#FFFFFF" :size="30" />
+        <ChevronLeft @click="" fillColor="#FFFFFF" :size="30" />
       </button>
       <button class="bg-black rounded-full">
         <ChevronRight fillColor="#FFFFFF" :size="30" />
       </button>
 
-      <div v-if="openSearchArea" class="flex items-center ml-10 w-[300px]">
+      <div v-if="openSearchArea" class="flex items-center ml-10 w-[300px] md:block hidden">
         <input
           class="rounded-3xl border-none w-full bg-[#3E3D3D] p-1 px-3 text-white placeholder:text-gray-400 placeholder:text-[14px]"
           type="text"
