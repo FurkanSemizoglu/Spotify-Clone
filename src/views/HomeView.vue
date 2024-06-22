@@ -25,7 +25,7 @@ console.log(singers)
     </div>
     <div class="grid grid-cols-5 gap-2">
       <HomeCard
-        image-url="https://picsum.photos/id/30/300/300"
+        image-url="https://picsum.photos/id/163/300/300"
         title="Trend 2024"
         subtitle="subtitle"
       />
