@@ -1,96 +1,17 @@
 <script setup lang="ts">
 import HomeCard from '@/components/HomeCard.vue'
-</script>
+import SingerCard from '@/components/SingerCard.vue'
+import singers from '../categories'
 
+console.log(singers)
+</script>
 <template>
   <div class="p-8">
     <!-- top part -->
+    <!-- <example /> -->;
     <div class="grid grid-cols-5 gap-4">
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
-      </div>
-
-      <div class="bg-[#282828] rounded-lg p-4">
-        <img
-          class="rounded-lg"
-          src="https://i.scdn.co/image/ab67706f00000003b3b3f3b3b3f3b3b3f3b3b3f3"
-          alt=""
-        />
-        <div class="text-white mt-2">Today's Top Hits</div>
+      <div v-for="(singer, index) in singers" :key="index">
+        <SingerCard :name="singer.name" :imageSrc="singer.imageSrc" />
       </div>
     </div>
     <!-- top part -->

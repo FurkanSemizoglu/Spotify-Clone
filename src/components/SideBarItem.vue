@@ -6,7 +6,7 @@ interface SideBarItemProps {
   name: string
   iconString: string
   iconSize: number
-  /*  toUrl: string */
+  toUrl: string
 }
 
 const props = defineProps<SideBarItemProps>()
@@ -17,7 +17,7 @@ imageSrc.value = props.iconString + '-active'
 </script>
 
 <template>
-  <RouterLink :to="`/${props.iconString}`">
+  <RouterLink :to="`/${props.toUrl}`">
     <div class="flex items-center justify-center gap-4 cursor-pointer">
       <img :width="iconSize" :src="`/images/icons/${imageSrc}.png`" :alt="name" />
 

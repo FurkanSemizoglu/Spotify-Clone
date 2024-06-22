@@ -50,15 +50,15 @@ import SideBarItem from './components/SideBarItem.vue'
       <SideBarItem name="Search" iconString="search" :iconSize="23" />
       <SideBarItem name="Library" iconString="library" :iconSize="23" />
     </div> -->
-      <SideBarItem name="Home" iconString="home" :iconSize="23" />
-      <SideBarItem name="Search" iconString="search" :iconSize="23" />
-      <SideBarItem name="Library" iconString="library" :iconSize="23" />
+      <SideBarItem name="Home" iconString="home" :iconSize="23" to-url="" />
+      <SideBarItem name="Search" iconString="search" :iconSize="23" to-url="search" />
+      <SideBarItem name="Library" iconString="library" :iconSize="23" to-url="library" />
 
       <div class="my-4"></div>
 
-      <SideBarItem name="Playlist" iconString="playlist" :iconSize="27" />
+      <SideBarItem name="Playlist" iconString="playlist" :iconSize="27" to-url="playlist" />
 
-      <SideBarItem name="Liked" iconString="liked" :iconSize="27" />
+      <SideBarItem name="Liked" iconString="liked" :iconSize="27" to-url="liked" />
 
       <div class="border-b w-[90%] mt-2 border-b-gray-700"></div>
 
