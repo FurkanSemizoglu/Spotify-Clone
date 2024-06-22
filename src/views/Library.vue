@@ -12,6 +12,8 @@ const isPlaying = ref<boolean>(true)
 
 <template>
   <div class="px-16 py-10">
+    <!-- Album Cover Part -->
+
     <div class="text-white text-2xl font-semibold cursor-pointer inline-block hover:underline">
       Duman
     </div>
@@ -41,5 +43,18 @@ const isPlaying = ref<boolean>(true)
         </div>
       </div>
     </div>
+    <!-- Album Cover Part -->
+
+    <div class="mt-8"></div>
+    <div class="flex justify-between items-center px-4">
+      <div class="flex items-center gap-6 text-gray-400">
+        <div class="">#</div>
+        <div class="text-sm">Title</div>
+      </div>
+      <ClockTimeThreeOutline fillColor="#FFFFFF" :size="18" />
+    </div>
+    <div class="border border-gray-600 mt-2"></div>
+
+    <div></div>
   </div>
 </template>
