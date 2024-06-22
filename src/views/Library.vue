@@ -11,19 +11,24 @@ const isPlaying = ref<boolean>(true)
 </script>
 
 <template>
-  <div class="px-8 py-7">
+  <div class="px-16 py-10">
     <div class="text-white text-2xl font-semibold cursor-pointer inline-block hover:underline">
       Duman
     </div>
     <div class="flex items-center mt-6">
       <img :width="140" src="https://picsum.photos/id/163/300/300" alt="dumanPicture" />
-      <div class="ml-5 flex flex-col h-[140px] items-start justify-between">
-        <div class="text-white inline-block w-full hover:underline cursor-pointer font-semibold">
+      <div class="ml-8 flex flex-col h-[140px] items-start justify-start gap-4">
+        <div
+          style="font-size: 33px"
+          class="text-white inline-block w-full hover:underline cursor-pointer font-semibold"
+        >
           Duman
         </div>
-        <div class="flex items-center justify-normal text-white gap-3">
+        <div class="flex items-center justify-normal text-gray-300 text-[13px] gap-3">
           <span>Album</span>
+          <div class="bg-white w-1 h-1 rounded-full mt-1 mr-2" />
           <span>Album</span>
+          <div class="bg-white w-1 h-1 rounded-full mt-1 mr-2" />
           <span>Album</span>
         </div>
         <div class="flex w-full items-center justify-start gap-6">
