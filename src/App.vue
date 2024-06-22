@@ -3,8 +3,17 @@ import { RouterLink, RouterView } from 'vue-router'
 import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 import ChevronRight from 'vue-material-design-icons/ChevronRight.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
+import ChevronUp from 'vue-material-design-icons/ChevronUp.vue'
 
 import SideBarItem from './components/SideBarItem.vue'
+
+import { ref } from 'vue'
+
+const openMenu = ref<boolean>(false)
+
+const toogleMenu = () => {
+  openMenu.value = !openMenu.value
+}
 </script>
 
 <template>
@@ -31,9 +40,21 @@ import SideBarItem from './components/SideBarItem.vue'
         alt="photo"
       />
       <div class="text-white text-[14px] cursor-default">Furkan Semizoğlu</div>
-      <ChevronDown fillColor="#FFFFFF" :size="30" />
+      <button @click="toogleMenu">
+        <ChevronDown v-if="!openMenu" fillColor="#FFFFFF" :size="30" />
+        <ChevronUp v-else fillColor="#FFFFFF" :size="30" />
+      </button>
     </div>
   </div>
+  <span v-if="openMenu" class="fixed top-[50px] right-7 z-50 w-[180px] bg-[#282828] shadow-2xl">
+    <ul class="flex flex-col py-1 font-semibold text-[14px]">
+      <li class="text-white hover:bg-[#3E3D3D] cursor-pointer p-2 border-b border-b-gray-600">
+        Profile
+      </li>
+      <!-- <div class="border border-gray-500 my-2"></div> -->
+      <li class="text-white hover:bg-[#3E3D3D] cursor-pointer p-2">Sign Out</li>
+    </ul>
+  </span>
 
   <!--    TopNav bar -->
 

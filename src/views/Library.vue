@@ -55,6 +55,57 @@ const isPlaying = ref<boolean>(true)
     </div>
     <div class="border border-gray-600 mt-2"></div>
 
-    <div></div>
+    <div class="flex flex-col px-1">
+      <div
+        class="text-white flex justify-between transition duration-300 ease-in-out py-2 px-3 hover:bg-gray-800 rounded-md gap-1 mt-3 cursor-pointer"
+      >
+        <div class="flex gap-7 items-center">
+          <div>1</div>
+          <div>
+            <div>Intro</div>
+            <div>Duman</div>
+          </div>
+        </div>
+        <div class="flex items-center">1:02</div>
+      </div>
+      <div
+        class="text-white flex justify-between transition duration-300 ease-in-out py-2 px-3 hover:bg-gray-800 rounded-md gap-1 mt-3 cursor-pointer"
+      >
+        <div class="flex gap-7 items-center">
+          <div>1</div>
+          <div>
+            <div>Intro</div>
+            <div>Duman</div>
+          </div>
+        </div>
+        <div class="flex items-center">1:02</div>
+      </div>
+
+      <div
+        class="text-white flex justify-between transition duration-300 ease-in-out py-2 px-3 hover:bg-gray-800 rounded-md gap-1 mt-3 cursor-pointer"
+      >
+        <div class="flex gap-7 items-center">
+          <div>1</div>
+          <div>
+            <div>Intro</div>
+            <div>Duman</div>
+          </div>
+        </div>
+        <div class="flex items-center">1:02</div>
+      </div>
+
+      <div
+        class="text-white flex justify-between transition duration-300 ease-in-out py-2 px-3 hover:bg-gray-800 rounded-md gap-1 mt-3 cursor-pointer"
+      >
+        <div class="flex gap-7 items-center">
+          <div>1</div>
+          <div>
+            <div>Intro</div>
+            <div>Duman</div>
+          </div>
+        </div>
+        <div class="flex items-center">1:02</div>
+      </div>
+    </div>
   </div>
 </template>
