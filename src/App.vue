@@ -4,6 +4,12 @@ import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 import ChevronRight from 'vue-material-design-icons/ChevronRight.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 import ChevronUp from 'vue-material-design-icons/ChevronUp.vue'
+import Heart from 'vue-material-design-icons/Heart.vue'
+import PictureInPictureBottomRight from 'vue-material-design-icons/PictureInPictureBottomRight.vue'
+import Play from 'vue-material-design-icons/Play.vue'
+import Pause from 'vue-material-design-icons/Pause.vue'
+import SkipBackward from 'vue-material-design-icons/SkipBackward.vue'
+import SkipForward from 'vue-material-design-icons/SkipForward.vue'
 
 import SideBarItem from './components/SideBarItem.vue'
 
@@ -128,12 +134,64 @@ watch(routePath, (newVal, oldVal) => {
       </ul>
     </div>
   </div>
+  <!--    LeftSide bar -->
 
+  <!--    RouterView bar -->
   <div
     class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1C1C1C] to-black"
   >
     <div class="mt-[70px]"></div>
     <RouterView />
     <div class="mb-[100px]"></div>
+  </div>
+
+  <div
+    class="fixed bottom-0 left-0 w-full h-[90px] bg-[#181818] border-t border-t-[#272727] grid grid-cols-3 items-center justify-center px-10 gap-3"
+  >
+    <div class="flex items-center gap-10 text-white">
+      <img src="https://picsum.photos/id/163/300/300" :width="50" alt="" />
+      <div>
+        <div class="font-semibold text-[14px] text-white hover:underline cursor-pointer">
+          Song Name
+        </div>
+        <div class="text-[11px] text-gray-500 hover:underline hover:text-white cursor-pointer">
+          Album Name
+        </div>
+      </div>
+      <div class="flex">
+        <Heart fillColor="#1BD760" :size="20" />
+        <PictureInPictureBottomRight class="ml-4" fillColor="#FFFFFF" :size="18" />
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <button class="mx-2">
+        <SkipBackward fillColor="#FFFFFF" :size="25" />
+      </button>
+      <button class="p-1 rounded-full mx-3 bg-white">
+        <Play fillColor="#181818" :size="25" />
+        <!-- <Pause fillColor="#181818" :size="25" /> -->
+      </button>
+      <button class="mx-2">
+        <SkipForward fillColor="#FFFFFF" :size="25" />
+      </button>
+
+      <div class="flex items-center h-[25px]">
+        <div class="text-white text-[12px] pr-2 pt-[11px]">njk</div>
+        <div ref="seekerContainer" class="w-full relative mt-2 mb-3">
+          <input
+            ref="seeker"
+            type="range"
+            class="absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
+          />
+          <div class="pointer-events-none mt-[6px] absolute h-[4px] z-10 inset-y-0 left-0 w-0" />
+          <div
+            class="absolute h-[4px] z-[-0] mt-[6px] inset-y-0 left-0 w-full bg-gray-500 rounded-full"
+          />
+        </div>
+        <div class="text-white text-[12px] pl-2 pt-[11px]">total</div>
+      </div>
+    </div>
+
+    <div>right</div>
   </div>
 </template>

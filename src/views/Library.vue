@@ -17,9 +17,9 @@ const isPlaying = ref<boolean>(true)
     <div class="text-white text-2xl font-semibold cursor-pointer inline-block hover:underline">
       Duman
     </div>
-    <div class="flex items-center justify-start mt-6 w-1/4">
+    <div class="flex flex-row items-center mt-6">
       <img :width="140" src="https://picsum.photos/id/163/300/300" alt="dumanPicture" />
-      <div class="ml-8 flex flex-col h-[140px] w-full items-start justify-start gap-4">
+      <div class="ml-8 flex flex-col h-[140px] mx-auto items-start gap-4">
         <div
           style="font-size: 33px"
           class="text-white inline-block w-full hover:underline cursor-pointer font-semibold"
