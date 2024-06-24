@@ -106,9 +106,9 @@ watch(routePath, (newVal, oldVal) => {
       <SideBarItem name="Search" iconString="search" :iconSize="23" />
       <SideBarItem name="Library" iconString="library" :iconSize="23" />
     </div> -->
-      <SideBarItem name="Home" iconString="home" :iconSize="23" to-url="" />
-      <SideBarItem name="Search" iconString="search" :iconSize="23" to-url="search" />
-      <SideBarItem name="Library" iconString="library" :iconSize="23" to-url="library" />
+      <SideBarItem name="Home" iconString="home" :iconSize="23" toUrl="" />
+      <SideBarItem name="Search" iconString="search" :iconSize="23" toUrl="search" />
+      <SideBarItem name="Library" iconString="library" :iconSize="23" toUrl="library" />
 
       <div class="my-4"></div>
 
