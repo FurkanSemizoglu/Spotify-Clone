@@ -11,6 +11,7 @@ import Pause from 'vue-material-design-icons/Pause.vue'
 import SkipBackward from 'vue-material-design-icons/SkipBackward.vue'
 import SkipForward from 'vue-material-design-icons/SkipForward.vue'
 
+import Volume from './components/Volume.vue'
 import SideBarItem from './components/SideBarItem.vue'
 
 import { ref, watch } from 'vue'
@@ -195,35 +196,40 @@ const goForwardPage = () => {
         <PictureInPictureBottomRight class="ml-4" fillColor="#FFFFFF" :size="18" />
       </div>
     </div>
-    <div class="flex justify-center">
-      <button class="mx-2">
-        <SkipBackward fillColor="#FFFFFF" :size="25" />
-      </button>
-      <button class="p-1 rounded-full mx-3 bg-white">
-        <Play fillColor="#181818" :size="25" />
-        <!-- <Pause fillColor="#181818" :size="25" /> -->
-      </button>
-      <button class="mx-2">
-        <SkipForward fillColor="#FFFFFF" :size="25" />
-      </button>
-
-      <div class="flex items-center h-[25px]">
-        <div class="text-white text-[12px] pr-2 pt-[11px]">njk</div>
+    <div class="flex flex-col justify-center items-center">
+      <div>
+        <button class="mx-2">
+          <SkipBackward fillColor="#FFFFFF" :size="25" />
+        </button>
+        <button class="p-1 rounded-full mx-3 bg-white">
+          <Play fillColor="#181818" :size="25" />
+          <!-- <Pause fillColor="#181818" :size="25" /> -->
+        </button>
+        <button class="mx-2">
+          <SkipForward fillColor="#FFFFFF" :size="25" />
+        </button>
+      </div>
+      <div class="flex items-center h-[25px] w-[300px]">
+        <div class="text-white text-[12px] pr-2 pt-[11px]">0:0</div>
         <div ref="seekerContainer" class="w-full relative mt-2 mb-3">
           <input
             ref="seeker"
             type="range"
             class="absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
           />
-          <div class="pointer-events-none mt-[6px] absolute h-[4px] z-10 inset-y-0 left-0 w-0" />
+          <div
+            class="w-[200px] pointer-events-none mt-[6px] absolute h-[4px] z-10 inset-y-0 left-0"
+          />
           <div
             class="absolute h-[4px] z-[-0] mt-[6px] inset-y-0 left-0 w-full bg-gray-500 rounded-full"
           />
         </div>
-        <div class="text-white text-[12px] pl-2 pt-[11px]">total</div>
+        <div class="text-white text-[12px] pl-2 pt-[11px]">3:45</div>
       </div>
     </div>
 
-    <div>right</div>
+    <div class="flex items-center justify-end mr-6">
+      <Volume />
+    </div>
   </div>
 </template>

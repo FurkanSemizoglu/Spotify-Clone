@@ -1,0 +1,25 @@
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+import VolumeMute from 'vue-material-design-icons/VolumeMute.vue'
+import VolumeHigh from 'vue-material-design-icons/VolumeHigh.vue'
+</script>
+
+<!--  The css is copied -->
+<template>
+  <div class="flex items-center">
+    <VolumeMute fillColor="#FFFFFF" :size="20" />
+    <!--  <VolumeHigh fillColor="#FFFFFF" :size="20" /> -->
+    <div class="flex items-center ml-2 w-[150px] relative mt-2 mb-[23px]">
+      <input
+        ref="volume"
+        type="range"
+        class="mt-[24px] absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
+      />
+      <div class="pointer-events-none mt-[6px] absolute h-[4px] z-10 inset-y-0 left-0 w-0" />
+      <div
+        class="absolute h-[4px] z-[-0] mt-[6px] inset-y-0 left-0 w-full bg-gray-500 rounded-full"
+      />
+    </div>
+  </div>
+</template>
