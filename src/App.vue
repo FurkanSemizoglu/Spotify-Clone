@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 import ChevronRight from 'vue-material-design-icons/ChevronRight.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
@@ -14,12 +14,17 @@ import SkipForward from 'vue-material-design-icons/SkipForward.vue'
 import SideBarItem from './components/SideBarItem.vue'
 
 import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+
+import { usePageTrackerStore } from './stores/pageTracker'
 
 const route = useRoute()
+const router = useRouter()
 const routePath = ref<string>(route.path)
 console.log('query ', route.path)
 const openMenu = ref<boolean>(false)
+
+const pageTracker = usePageTrackerStore()
+const pageIndex = ref<number>(0)
 
 const toogleMenu = () => {
   openMenu.value = !openMenu.value
@@ -28,6 +33,11 @@ const toogleMenu = () => {
 const openSearchArea = ref<boolean>(false)
 
 watch(route, () => {
+  pageTracker.addPage(route.path)
+  pageIndex.value++
+  console.log('pages ', pageTracker.getPages())
+  console.log('pages ', pageIndex.value)
+
   routePath.value = route.path
 })
 
@@ -41,6 +51,28 @@ watch(routePath, (newVal, oldVal) => {
   console.log('oldVal', oldVal)
   console.log('newVal', newVal)
 })
+
+const goBackPage = () => {
+  /*   console.log('go back') */
+  console.log(pageIndex.value)
+  if (pageIndex.value === 1) return
+  pageIndex.value--
+  const page: string = pageTracker.getPage(pageIndex.value - 1)
+  router.push(page)
+  pageIndex.value--
+  /*  window.location.href = `http://localhost:5173${page}`   */
+}
+
+const goForwardPage = () => {
+  /*  console.log('go back') */
+  console.log(pageIndex.value)
+  if (pageIndex.value === pageTracker.pageCount) return
+  pageIndex.value++
+  const page: string = pageTracker.getPage(pageIndex.value - 1)
+  router.push(page)
+  pageIndex.value++
+  /*  window.location.href = `http://localhost:5173${page}`   */
+}
 </script>
 
 <template>
@@ -49,10 +81,10 @@ watch(routePath, (newVal, oldVal) => {
     class="w-[calc(100%-240px)] h-[60px] fixed right-0 bg-[#101010] z-50 bg-opacity-90 flex items-center justify-between"
   >
     <div class="flex gap-3 ml-3">
-      <button type="button" class="bg-black rounded-full">
+      <button type="button" class="bg-black rounded-full" @click="goBackPage">
         <ChevronLeft @click="" fillColor="#FFFFFF" :size="30" />
       </button>
-      <button class="bg-black rounded-full">
+      <button class="bg-black rounded-full" @click="goForwardPage">
         <ChevronRight fillColor="#FFFFFF" :size="30" />
       </button>
 

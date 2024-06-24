@@ -12,7 +12,11 @@ export const usePageTrackerStore = defineStore('pageTracker', () => {
     return pages.value[index]
   }
 
+  function getPages() {
+    return pages.value
+  }
+
   const pageCount = computed(() => pages.value.length)
 
-  return { pages, addPage, getPage, pageCount }
+  return { pages, addPage, getPage, pageCount, getPages }
 })
